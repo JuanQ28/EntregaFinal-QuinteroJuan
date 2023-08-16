@@ -36,6 +36,8 @@ header{
     background-color: #dc9bed;
 }
 
+/* Aplicación de estilos a la navbar */
+
 .navegador{
     display: flex;
     justify-content: space-between;
@@ -323,6 +325,8 @@ footer div{
     background-color: #e0adbe;
 }
 
+/* Aplicación de estilos en el collage de momentos destacables */
+
 #nosotros__momentos{
     display: flex;
     justify-content: center;
@@ -505,6 +509,8 @@ footer div{
 /*_____________________________________________________________________________ */
 /*_____________________________________________________________________________ */
 
+/* En esta sección aplicamos los esilos del despegable de filtros que se muestra en el header para esta página */
+
 header .accordion-item{
     border: 0;
 }
@@ -560,6 +566,8 @@ header .accordion-body .form-check{
     font-size: 20px;
     border: 3px solid #212529;
 }
+
+/* Aplicación de estilos al contenedor de las cards productos y a las cards en sí */
 
 #productos{
     padding-top: 50px;
