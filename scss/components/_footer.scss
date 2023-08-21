@@ -1,0 +1,51 @@
+footer{
+    background-color: $primer-color;
+    box-shadow: 0px -5px 10px 0px rgb(255, 255, 255);
+    div{
+        width: 25%;
+    }
+    /* Acá hacemos más énfasis en la clase .footer, ya que nos brinda más comodidad con la nomenclatura BEM */
+    .footer{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px 0;
+        &_container_link{
+            width: 25%;
+            img{
+                width: 100%;
+            }
+        }
+        &_contacto, &_redessociales{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            color: $primer-color-fuente;
+            p{
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.5s;
+                &:hover{
+                    color: $primer-color-fuente-hover;
+                }
+            }
+        }
+    }
+    .footer_redessociales_icons{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        font-size: 2rem;
+        i{
+            color: $primer-color-fuente;
+            transition: 0.5s;
+            &:hover{
+                color: $primer-color-fuente-hover;
+            }
+        }
+    }
+}

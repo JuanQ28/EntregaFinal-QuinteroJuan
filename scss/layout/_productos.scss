@@ -1,0 +1,130 @@
+/* En esta sección aplicamos los esilos del despegable de filtros que se muestra en el header para esta página */
+
+header{
+    .accordion-item{
+    border: 0;
+        &:first-of-type .accordion-button{
+            border-radius: 0;
+        }
+        &:last-of-type, &:first-of-type{
+            border-radius: 0;
+        }
+    }
+    #collapseOne{
+        transition: all 0.5s;
+    }
+    .accordion-button {
+        font-size: 20px;
+        font-weight: bold;
+        transition: all 0.5s;
+        &:not(.collapsed){
+            background-color: #26a9e0;
+            color: white;
+        }
+    }
+    .accordion-body{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        p{
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .form-check{
+            font-size: 18px;
+        }
+        &_buscador{
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 20px;
+            border: 3px solid #212529;
+        }
+    }
+    .header_acordeon_checkbox{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+} 
+
+/* Aplicación de estilos al contenedor de las cards productos y a las cards en sí */
+
+.productos{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    &_separador{
+        width: 25%;
+        padding: 10px;
+    }
+    &_cards{
+        height: 450px;
+        background-color: #eacad7;
+        padding: 25px 15px 15px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s;
+        border-radius: 20px;
+        &:hover{
+            background-color: #e0adbe;
+            .productos_cards_contenido_data_titulo{
+                color: #ea1166;
+            }
+        }
+        &_img{
+            overflow: hidden;
+            width: 100%;
+            height: 300px;
+            border-radius: 20px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 0.5s all ease-in-out;
+                &:hover{
+                    transform: scale(1.5);
+                }
+            }
+        }
+        &_contenido_data{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &_titulo{
+                text-align: center;
+                font-size: 20px;
+                font-weight: bold;
+                transition: all 0.5s;
+            }
+            &_descripcion{
+                text-align: center;
+            }
+            &_precio{
+                font-size: 20px;
+                font-weight: bold;
+            }
+            &_boton{
+                padding: 5px;
+                transition: all 0.5s;
+                color: #26a9e0;
+                font-size: 15px;
+                font-weight: bold;
+                border-radius: 10px;
+                border: 0;
+                &:hover{
+                    background-color: #26a9e0;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+

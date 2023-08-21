@@ -1,0 +1,166 @@
+@media screen and (max-width: 995px){
+    /* mediaqueries para la página productos */
+    .productos{
+        &_separador{
+            width: 33.33333333%;
+        }
+    }
+}
+
+@media screen and (max-width: 770px){
+    /* mediaqueries para la página sucursales */
+    .sucursales_principal_sucursal_elemento6{
+        flex-direction: column;
+        gap: 10px;
+    }
+    /* mediaqueries para la página productos */
+    .productos{
+        &_separador{
+            width: 50%;
+        }
+    }
+    /* mediaqueries para la página carrito */
+    .carrito{
+        &_card{
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: 50px 150px 50px;
+        grid-template-areas:
+        'nombre nombre'
+        'img und'
+        'eliminar eliminar'
+        ;
+        &_eliminar{
+            flex-direction: row;
+            justify-content: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            background-color: $primer-color-logo;
+            &_titulo{
+                height: 100%;
+                width: 50%;
+            }
+            button{
+                height: 100%;
+                width: 50%;
+            }
+        }
+        &_img{
+            border-bottom-left-radius: 0;
+        }
+        }
+    }
+}
+
+@media screen and (max-width: 590px){
+    /* apliaciones de cambios al index, header y footer */
+    header{
+        .navegador{
+            display: grid;
+            grid-template-columns: repeat(1, 100%);
+            grid-template-rows: auto;
+            grid-template-areas: 
+            'navlogo'
+            'nav1'
+            'nav2'
+            ;
+            justify-items: center;
+            align-items: center;
+            gap: 10px;
+            &_logo{
+                width: 100%;
+                img{
+                    width: 80%;
+                }
+            }
+            &_list{
+                flex-direction: column;
+            }
+        }
+    }
+
+    #publicaciones{
+        .publicaciones_container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(1, 100%);
+            grid-template-rows: repeat(4,200px);
+            grid-template-areas: 
+            'mol1'
+            'mol2'
+            'mol3'
+            'mol4'
+            ;
+        }
+    }
+    
+    footer{
+        div{
+            width: 50%;
+        }
+        .footer{
+            flex-direction: column;
+            gap: 20px;
+            &_container_link{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                img{
+                    width: 300px;
+                }
+            }
+        }
+    }
+
+
+    /* Cambios a la página nosotros */
+    .nosotros_principal_container_textos{
+        flex-direction: column;
+    }
+
+    .nosotros_principal_container_textos_mision, .nosotros_principal_container_textos_vision{
+        width: 100%;
+    }
+
+    .nosotros_momentos_collage{
+        grid-template-columns: repeat(1, 100%);
+        grid-template-areas: 
+        'img1'
+        'img2'
+        'img3'
+        'img4'
+        'img5'
+        'img6'
+        'img7'
+        ;  
+    }
+
+    /* Ahora aplicaremos cambios a la página de sucursales */
+    .sucursales_principal_sucursal{
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: auto;
+        grid-template-areas: 
+        'ele1'
+        'ele2'
+        'ele3'
+        'ele4'
+        'ele5'
+        'ele6'
+        ;
+        /* gap: 15px; */
+        &_elemento6{
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 440px){
+    /* mediaqueries para la página productos */
+    .productos{
+        &_separador{
+            width: 100%;
+        }
+    }
+}

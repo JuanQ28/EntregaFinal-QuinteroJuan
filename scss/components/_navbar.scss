@@ -1,0 +1,62 @@
+header{
+    box-shadow: 0px 5px 10px 0px rgb(255, 255, 255);
+    background-color: $primer-color;
+    /* Aplicación de estilos a la navbar */
+    .navegador{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        &_list{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            width: 33.3%;
+            li{
+                font-size: 1.5rem;
+                font-weight: bold;    
+                a{
+                    color: $primer-color-fuente;
+                    transition: all 0.5s;
+                    &:hover{
+                        color: $primer-color-fuente-hover;
+                    }
+                }
+            }
+            i{
+                font-size: 2.5rem;
+                color: $primer-color-fuente;
+                transition: all 0.5s;
+                &:hover{
+                    color: $primer-color-fuente-hover;
+                }
+            }
+        }
+        &_list_primera{
+            grid-area: nav1;
+        }
+        
+        &_list_segunda{
+            grid-area: nav2;
+        }
+        &_logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 33.3%;
+            grid-area: navlogo;
+            img{
+                width: 50%;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+

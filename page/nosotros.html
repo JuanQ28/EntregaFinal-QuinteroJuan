@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- meta etiquetas predeterminadas -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,20 +10,41 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- link al archivo css -->
     <link rel="stylesheet" href="../css/style.css">
-    <title>IceQueen</title>
+    
+    <!-- Aplicación de meta etiquetas -->
+        <!-- Primary Meta Tags -->
+    <title>IceQueen-Nosotros</title>
+    <meta name="title" content="IceQueen - Nosotros" />
+    <meta name="description" content="Una heladería que busca el acorde perfecto entre el deleite y grandes experiencias de nuestros consumidores." />
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://metatags.io/" />
+    <meta property="og:title" content="IceQueen - Nosotros" />
+    <meta property="og:description" content="Una heladería que busca el acorde perfecto entre el deleite y grandes experiencias de nuestros consumidores." />
+    <meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://metatags.io/" />
+    <meta property="twitter:title" content="IceQueen - Nosotros" />
+    <meta property="twitter:description" content="Una heladería que busca el acorde perfecto entre el deleite y grandes experiencias de nuestros consumidores." />
+    <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+
+    <!-- Agregando favicon -->
+    <link rel="icon" type="image/png" href="../assets/ice-cream-favicon.png">
 </head>
 <body>
     <header>
         <nav class="navegador container">
-            <ul class="navegador__list">
+            <ul class="navegador_list">
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="sucursales.html">Sucursales</a></li>
             </ul>
-            <a href="../index.html" class="navegador__logo">
+            <a href="../index.html" class="navegador_logo">
                 <img src="../assets/Logo-Principal.png" alt="logo_principal">
             </a>
-            <ul class="navegador__list">
+            <ul class="navegador_list">
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="carrito.html"><i class="bi bi-cart-fill"></i></a></li>
             </ul>
@@ -30,91 +52,106 @@
     </header>
 
     <main>
-        <section id="nosotros__principal">
-            <div class="container">
+        <!-- Se aplicaron clases en vez de id's en las secciones para más comodidad en los anidamientos de SASS -->
+        <section class="nosotros_principal container">
+            <div class="nosotros_principal_container">
                 <h1>
                     ICE QUEEN, el nacimiento de un <br>
                     emprendimiento que busca satisfacer tus más dulces tentaciones 
                 </h1>
-                <div class="nosotros__container__textos">
-                    <div class="nosotros__container__textos__mision shadow-sm">
+                <div class="nosotros_principal_container_textos">
+                    <div class="nosotros_principal_container_textos_mision shadow-sm">
                         <h2>Misión</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam accusamus doloribus ab quam maxime nesciunt eveniet voluptas laboriosam quibusdam tempore commodi molestiae a itaque, veniam iste ratione? Ex dignissimos maiores, at similique voluptate beatae perspiciatis saepe libero sequi praesentium sed nemo, quod consequuntur, nostrum magni odio asperiores pariatur iusto laborum quis unde fuga! Ut nulla reiciendis doloribus modi eveniet quam ratione explicabo hic totam similique. Neque, nulla ab voluptatem dicta eligendi explicabo delectus nisi error, excepturi maxime esse ea doloribus?</p>
+                        <p>Nuestra misión es deleitar a nuestros clientes con una experiencia única y refrescante a través de la creación y venta de helados artesanales de la más alta calidad. Buscamos ser reconocidos por la frescura de nuestros ingredientes, la creatividad de nuestros sabores y la excelencia en el servicio al cliente. Nos esforzamos por mantener la tradición de la heladería artesanal mientras exploramos constantemente nuevas formas de innovar y sorprender los paladares de nuestros clientes.</p>
                     </div>
-                    <div class="nosotros__container__textos__vision shadow-sm">
+                    <div class="nosotros_principal_container_textos_vision shadow-sm">
                         <h2>Visión</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ipsam id odio ea officiis optio incidunt, quaerat sint quisquam provident praesentium veritatis velit sit autem obcaecati officia eligendi saepe voluptate delectus? Obcaecati at ea a delectus laudantium ad voluptate cupiditate, temporibus consequatur. Impedit, distinctio sed? Sapiente saepe ea officia inventore mollitia recusandae eum optio labore autem delectus, hic incidunt velit debitis reiciendis, temporibus ipsum earum aut ab nemo voluptatibus assumenda! Dicta ipsam quasi beatae deserunt, repudiandae ducimus laudantium animi minima?</p>
+                        <p>Nuestra visión es convertirnos en la heladería preferida a nivel local y regional, reconocida por la autenticidad y la originalidad de nuestros productos. Aspiramos a expandir nuestra presencia en múltiples ubicaciones y a ser líderes en la industria de helados artesanales. Nos esforzamos por mantener un compromiso constante con la calidad, la sostenibilidad y la satisfacción del cliente. A medida que crecemos, buscamos inspirar a otras empresas a seguir estándares elevados en la producción de alimentos y a contribuir positivamente a nuestras comunidades.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="nosotros__momentos" class="container">
+        <section class="nosotros_momentos container">
             <h2>
                 Momentos destacables
             </h2>
-                <div class="nosotros__momentos__collage">
-                    <div class="nosotros__momentos__collage__contenido nosotros__collage__img1">
+                <div class="nosotros_momentos_collage">
+                    <div class="nosotros_momentos_collage_contenido nosotros_momentos_collage_img1">
                         <img src="../assets/momento-1.jpg" alt="">
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <div class="nosotros_momentos_collage_contenido_texto">
+                            <p>Inauguración de nuestro primer local</p>
+                        </div>
                     </div>
-                    <div class="nosotros__momentos__collage__contenido nosotros__collage__img2">
+                    <div class="nosotros_momentos_collage_contenido nosotros_momentos_collage_img2">
                         <img src="../assets/momento-2.jpg" alt="">
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <div class="nosotros_momentos_collage_contenido_texto">
+                            <p>Presentación de nuevas neveras</p>
+                        </div>
                     </div>
-                    <div class="nosotros__momentos__collage__contenido nosotros__collage__img3">
+                    <div class="nosotros_momentos_collage_contenido nosotros_momentos_collage_img3">
                         <img src="../assets/momento-3.jpg" alt="">
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <div class="nosotros_momentos_collage_contenido_texto">
+                            <p>Grandes expansiones de nuestro menú para todos nuestros clientes</p>
+                        </div>
                     </div>
-                    <div class="nosotros__momentos__collage__contenido nosotros__collage__img4">
+                    <div class="nosotros_momentos_collage_contenido nosotros_momentos_collage_img4">
                         <img src="../assets/momento-4.jpg" alt="">
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <div class="nosotros_momentos_collage_contenido_texto">
+                            <p>Presentación de nuestro más nuevo local</p>
+                        </div>
                     </div>
-                    <div class="nosotros__momentos__collage__contenido nosotros__collage__img5">
+                    <div class="nosotros_momentos_collage_contenido nosotros_momentos_collage_img5">
                         <img src="../assets/momento-5.jpg" alt="">
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <div class="nosotros_momentos_collage_contenido_texto">
+                            <p>Presentación de helados premium</p>
+                        </div>
                     </div>
-                    <div class="nosotros__momentos__collage__contenido nosotros__collage__img6">
+                    <div class="nosotros_momentos_collage_contenido nosotros_momentos_collage_img6">
                         <img src="../assets/momento-6.jpg" alt="">
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <div class="nosotros_momentos_collage_contenido_texto">
+                            <p>Inauguración de pasteles de helado</p>
+                        </div>
                     </div>
-                    <div class="nosotros__momentos__collage__contenido nosotros__collage__img7">
+                    <div class="nosotros_momentos_collage_contenido nosotros_momentos_collage_img7">
                         <img src="../assets/momento-7.jpg" alt="">
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <div class="nosotros_momentos_collage_contenido_texto">
+                            <p>Creación de las mejores cremas en el mercado</p>
+                        </div>
                     </div>
                 </div>
         </section>
     </main>
 
     <footer>
-        <div class="container">
-          <a href="../index.html" class="footer__container__link">
-            <img src="../assets/Logo-Principal.png" alt="">
-          </a>
-          <div class="footer__contacto">
-            <p><b>Contacto:</b></p>
-            <p>+41 123 123 1312</p>
-            <p><b>Email</b></p>
-            <p>algo@gmail.com</p>
-          </div>
-          <div class="footer__redessociales">
-            <p><b>Redes sociales</b></p>
-            <div class="footer__redessociales__icons">
-              <a href="">
-                <i class="bi bi-instagram"></i>
-              </a>
-              <a href="">
-                <i class="bi bi-facebook"></i>
-              </a>
-              <a href="">
-                <i class="bi bi-twitter"></i>
-              </a>
-              <a href="">
-                <i class="bi bi-youtube"></i>
-              </a>
+        <div class="footer container">
+            <a href="index.html" class="footer_container_link">
+                <img src="../assets/Logo-Principal.png" alt="logo_principal">
+            </a>
+            <div class="footer_contacto">
+                <h3><b>Contacto:</b></h3>
+                <p>+41 123 123 1312</p>
+                <h3><b>Email:</b></h3>
+                <p>algo@gmail.com</p>
             </div>
-          </div>
+            <div class="footer_redessociales">
+            <h3><b>Redes sociales:</b></h3>
+            <div class="footer_redessociales_icons">
+                <a href="notfound" target="_blank">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="notfound" target="_blank">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="notfound" target="_blank">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="notfound" target="_blank">
+                    <i class="bi bi-youtube"></i>
+                </a>
+            </div>
+            </div>
         </div>
-      </footer>
+        </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
