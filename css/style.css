@@ -1,5 +1,39 @@
 @charset "UTF-8";
+/* Asignación de tamaños de los h principales de uso del proyecto */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+h1 {
+  font-size: 2.7rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.7rem;
+}
+
+/* Creamos esta clase para luego ser extendida durante nuestro estilado */
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ahora crearemos los mixin que emplearemos durante el proyecto */
+/* Se crearon ambos flex para ser aplicados en la mayoría de archivos de estilos */
+/* Ahora utilizamos una pequeña animación para darle un poco de vida a nuestro logo */
+@keyframes soft {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -15,10 +49,6 @@ ul {
 a {
   text-decoration: none;
   color: #080808;
-}
-
-.shadow {
-  box-shadow: 0 0.5rem 1rem rgb(255, 255, 255) !important;
 }
 
 body {
@@ -62,8 +92,10 @@ header {
 }
 header .navegador {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  gap: 0;
   padding: 10px 0;
 }
 header .navegador_list {
@@ -99,14 +131,17 @@ header .navegador_list_segunda {
   grid-area: nav2;
 }
 header .navegador_logo {
+  animation: soft 5s infinite;
+  animation-delay: 0s;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: row;
   width: 33.3%;
   grid-area: navlogo;
 }
 header .navegador_logo img {
-  width: 50%;
+  width: 60%;
 }
 
 footer {
@@ -114,13 +149,12 @@ footer {
   box-shadow: 0px -5px 10px 0px rgb(255, 255, 255);
   /* Acá hacemos más énfasis en la clase .footer, ya que nos brinda más comodidad con la nomenclatura BEM */
 }
-footer div {
-  width: 25%;
-}
 footer .footer {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
+  gap: 0;
   padding: 10px 0;
 }
 footer .footer_container_link {
@@ -128,17 +162,23 @@ footer .footer_container_link {
 }
 footer .footer_container_link img {
   width: 100%;
+  animation: soft 5s infinite;
+  animation-delay: 0s;
 }
 footer .footer_contacto, footer .footer_redessociales {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-evenly;
   gap: 10px;
   font-size: 1.5rem;
   color: #2d1b4f;
 }
+footer .footer_contacto h3, footer .footer_redessociales h3 {
+  text-align: center;
+}
 footer .footer_contacto p, footer .footer_redessociales p {
+  text-align: center;
   font-weight: bold;
   cursor: pointer;
   transition: 0.5s;
@@ -148,8 +188,10 @@ footer .footer_contacto p:hover, footer .footer_redessociales p:hover {
 }
 footer .footer_redessociales_icons {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  gap: 0;
   width: 100%;
   font-size: 2rem;
 }
@@ -165,8 +207,8 @@ footer .footer_redessociales_icons i:hover {
 #bienvenida {
   padding-top: 50px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
 #bienvenida h1 {
@@ -198,18 +240,17 @@ footer .footer_redessociales_icons i:hover {
 #publicaciones {
   padding-top: 50px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   padding-bottom: 50px;
 }
 #publicaciones h2 {
-  padding-bottom: 50px;
   text-align: center;
 }
 #publicaciones p {
   padding-bottom: 50px;
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 #publicaciones .publicaciones_container {
   width: 100%;
@@ -229,14 +270,15 @@ footer .footer_redessociales_icons i:hover {
   height: 100%;
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 #publicaciones .publicaciones_container_contenido span {
   position: absolute;
   display: none;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: bold;
   background-color: white;
 }
@@ -262,8 +304,8 @@ footer .footer_redessociales_icons i:hover {
 .nosotros_principal {
   padding-top: 50px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
 .nosotros_principal_container h1 {
@@ -272,20 +314,28 @@ footer .footer_redessociales_icons i:hover {
 }
 .nosotros_principal_container_textos {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  padding-bottom: 50px;
+  justify-content: space-between;
   gap: 20px;
+  padding-bottom: 50px;
 }
 .nosotros_principal_container_textos_mision, .nosotros_principal_container_textos_vision {
+  box-shadow: 0 0 10px 5px rgb(255, 255, 255);
+  height: 500px;
   width: 50%;
   padding: 15px;
   background-color: #eacad7;
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   transition: all 0.5s;
+  overflow-y: scroll;
+  /* Agregamos estilos a las scrollbar generadas para que el tamaño de pantalla no afecte el contenido */
 }
 .nosotros_principal_container_textos_mision p, .nosotros_principal_container_textos_vision p {
-  font-size: 20px;
+  font-size: 1.5rem;
   text-align: justify;
   color: #480f10;
 }
@@ -296,12 +346,25 @@ footer .footer_redessociales_icons i:hover {
 .nosotros_principal_container_textos_mision:hover, .nosotros_principal_container_textos_vision:hover {
   background-color: #dc9bed;
 }
+.nosotros_principal_container_textos_mision::-webkit-scrollbar, .nosotros_principal_container_textos_vision::-webkit-scrollbar {
+  width: 12px;
+}
+.nosotros_principal_container_textos_mision::-webkit-scrollbar-track, .nosotros_principal_container_textos_vision::-webkit-scrollbar-track {
+  background: #ea1166;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.nosotros_principal_container_textos_mision::-webkit-scrollbar-thumb, .nosotros_principal_container_textos_vision::-webkit-scrollbar-thumb {
+  background-color: #26a9e0;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+}
 
 /* Aplicación de estilos en el collage de momentos destacables */
 .nosotros_momentos {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   padding-bottom: 50px;
 }
@@ -318,14 +381,16 @@ footer .footer_redessociales_icons i:hover {
 .nosotros_momentos_collage_contenido {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: row;
   padding: 10px;
 }
 .nosotros_momentos_collage_contenido_texto {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: row;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -333,16 +398,19 @@ footer .footer_redessociales_icons i:hover {
   /* background-color: #19191925; */
 }
 .nosotros_momentos_collage_contenido_texto p {
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   color: white;
+  background-color: rgba(25, 25, 25, 0.2823529412);
+  border-radius: 10px;
+  padding: 10px;
 }
 .nosotros_momentos_collage_contenido img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(5px);
+  filter: blur(10px);
   transition: all 0.5s;
   border-radius: 20px;
 }
@@ -394,8 +462,8 @@ footer .footer_redessociales_icons i:hover {
 
 .sucursales_principal {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   padding-top: 50px;
 }
@@ -404,6 +472,7 @@ footer .footer_redessociales_icons i:hover {
   text-align: center;
 }
 .sucursales_principal_sucursal {
+  box-shadow: 0 0 10px 5px rgb(255, 255, 255);
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 50%);
@@ -427,14 +496,14 @@ footer .footer_redessociales_icons i:hover {
   width: 100%;
 }
 .sucursales_principal_sucursal_elemento2 .carousel .carousel-inner .carousel-item img {
-  height: 300px;
+  min-height: 300px;
   width: 100%;
   object-fit: cover;
 }
 .sucursales_principal_sucursal_elemento3 {
   grid-area: ele3;
   padding: 10px;
-  font-size: 20px;
+  font-size: 1.5rem;
   text-align: justify;
   align-self: center;
   width: 100%;
@@ -442,24 +511,27 @@ footer .footer_redessociales_icons i:hover {
 .sucursales_principal_sucursal_elemento4 {
   grid-area: ele4;
   width: 100%;
-  height: 300px;
+  height: 100%;
+  min-height: 300px;
 }
 .sucursales_principal_sucursal_elemento5 {
   grid-area: ele5;
   padding: 10px;
-  font-size: 20px;
+  font-size: 1.5rem;
   text-align: justify;
   align-self: center;
 }
 .sucursales_principal_sucursal_elemento6 {
   grid-area: ele6;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  gap: 0;
   padding: 10px;
   background-color: #e0adbe;
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 1.5rem;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -489,6 +561,8 @@ header .accordion-button:not(.collapsed) {
 header .accordion-body {
   display: flex;
   flex-direction: column;
+  align-items: normal;
+  justify-content: normal;
   gap: 20px;
 }
 header .accordion-body p {
@@ -507,11 +581,20 @@ header .accordion-body_buscador {
 }
 header .header_acordeon_checkbox {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
+  gap: 0;
 }
 
 /* Aplicación de estilos al contenedor de las cards productos y a las cards en sí */
+.productos_principal {
+  padding-top: 50px;
+}
+.productos_principal h1 {
+  text-align: center;
+}
+
 .productos {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -523,15 +606,16 @@ header .header_acordeon_checkbox {
   padding: 10px;
 }
 .productos_cards {
+  box-shadow: 0 0 10px 5px rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   height: 450px;
   background-color: #eacad7;
   padding: 25px 15px 15px 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s;
   border-radius: 20px;
+  transition: all 0.5s;
 }
 .productos_cards:hover {
   background-color: #e0adbe;
@@ -542,7 +626,7 @@ header .header_acordeon_checkbox {
 .productos_cards_img {
   overflow: hidden;
   width: 100%;
-  height: 300px;
+  height: 50%;
   border-radius: 20px;
 }
 .productos_cards_img img {
@@ -554,13 +638,18 @@ header .header_acordeon_checkbox {
 .productos_cards_img img:hover {
   transform: scale(1.5);
 }
+.productos_cards_contenido {
+  height: 50%;
+}
 .productos_cards_contenido_data {
+  max-height: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: normal;
+  gap: 10px;
 }
 .productos_cards_contenido_data_titulo {
   text-align: center;
@@ -570,19 +659,20 @@ header .header_acordeon_checkbox {
 }
 .productos_cards_contenido_data_descripcion {
   text-align: center;
+  font-size: 1rem;
 }
 .productos_cards_contenido_data_precio {
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 .productos_cards_contenido_data_boton {
-  padding: 5px;
-  transition: all 0.5s;
-  color: #26a9e0;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: bold;
+  padding: 5px;
+  color: #26a9e0;
   border-radius: 10px;
   border: 0;
+  transition: all 0.5s;
 }
 .productos_cards_contenido_data_boton:hover {
   background-color: #26a9e0;
@@ -597,6 +687,7 @@ header .header_acordeon_checkbox {
   flex-direction: column;
 }
 .carrito_card {
+  box-shadow: 0 0 10px 5px rgb(255, 255, 255);
   margin-bottom: 50px;
   width: 100%;
   display: grid;
@@ -650,8 +741,9 @@ header .header_acordeon_checkbox {
 .carrito_card_unidades_titulo {
   height: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 .carrito_card_unidades p {
   margin-bottom: 0;
@@ -662,16 +754,19 @@ header .header_acordeon_checkbox {
   width: 100%;
   height: 50%;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
+  gap: 0;
   font-size: 30px;
   font-weight: bold;
 }
 .carrito_card_unidades ul li {
   width: 33.33333333%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 .carrito_card_unidades ul i {
   transition: all 0.3s;
@@ -691,9 +786,9 @@ header .header_acordeon_checkbox {
 .carrito_card_eliminar_titulo {
   height: 50%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .carrito_card_eliminar p {
   margin-bottom: 0;
@@ -718,6 +813,24 @@ header .header_acordeon_checkbox {
   }
 }
 @media screen and (max-width: 770px) {
+  /* mediaqueries para el header y el footer */
+  header .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  header .navegador_list li {
+    font-size: 1.2rem;
+  }
+  header .navegador_logo img {
+    width: 80%;
+  }
+  footer .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  footer .footer_contacto, footer .footer_redessociales {
+    font-size: 1.2rem;
+  }
   /* mediaqueries para la página sucursales */
   .sucursales_principal_sucursal_elemento6 {
     flex-direction: column;
@@ -753,7 +866,7 @@ header .header_acordeon_checkbox {
   }
 }
 @media screen and (max-width: 590px) {
-  /* apliaciones de cambios al index, header y footer */
+  /* aplicaciones de cambios al index, header y footer */
   header .navegador {
     display: grid;
     grid-template-columns: repeat(1, 100%);
@@ -771,6 +884,9 @@ header .header_acordeon_checkbox {
   }
   header .navegador_list {
     flex-direction: column;
+  }
+  header .navegador_list li {
+    font-size: 1.5rem;
   }
   #publicaciones .publicaciones_container {
     width: 100%;
@@ -794,6 +910,9 @@ header .header_acordeon_checkbox {
   }
   footer .footer_container_link img {
     width: 300px;
+  }
+  footer .footer_contacto, footer .footer_redessociales {
+    font-size: 1.5rem;
   }
   /* Cambios a la página nosotros */
   .nosotros_principal_container_textos {

@@ -5,9 +5,41 @@
             width: 33.33333333%;
         }
     }
+    $primer-color-logo-fuente: white;
 }
 
 @media screen and (max-width: 770px){
+    /* mediaqueries para el header y el footer */
+    header{
+        .container{
+            max-width: 100%;
+            padding: 0 20px;
+        }
+        .navegador{
+            &_list{
+                li{
+                    font-size: 1.2rem;
+                }
+            }
+            &_logo{
+                img{
+                    width: 80%;
+                }
+            }
+        }
+    }
+    footer{
+        .container{
+            max-width: 100%;
+            padding: 0 20px;
+        }
+        .footer{
+            &_contacto, &_redessociales{
+                font-size: 1.2rem;
+            }
+        }
+    }
+
     /* mediaqueries para la página sucursales */
     .sucursales_principal_sucursal_elemento6{
         flex-direction: column;
@@ -52,7 +84,7 @@
 }
 
 @media screen and (max-width: 590px){
-    /* apliaciones de cambios al index, header y footer */
+    /* aplicaciones de cambios al index, header y footer */
     header{
         .navegador{
             display: grid;
@@ -74,6 +106,9 @@
             }
             &_list{
                 flex-direction: column;
+                li{
+                    font-size: 1.5rem;
+                }
             }
         }
     }
@@ -108,6 +143,9 @@
                 img{
                     width: 300px;
                 }
+            }
+            &_contacto, &_redessociales{
+                font-size: 1.5rem;
             }
         }
     }

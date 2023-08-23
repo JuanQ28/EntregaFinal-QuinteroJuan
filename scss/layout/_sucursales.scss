@@ -1,14 +1,12 @@
 .sucursales_principal{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flex-center(column);
     padding-top: 50px;
     h1{
         padding-bottom: 50px;
         text-align: center;
     }
     &_sucursal{
+        @include luz(centro);
         width: 100%;
         display: grid;
         grid-template-columns: repeat(2, 50%);
@@ -35,7 +33,7 @@
             grid-area: ele2;
             width: 100%;
             & .carousel .carousel-inner .carousel-item img{
-                height: 300px;
+                min-height: 300px;
                 width: 100%;
                 object-fit: cover;
             }
@@ -43,7 +41,7 @@
         &_elemento3{
             grid-area: ele3;
             padding: 10px;
-            font-size: 20px;
+            font-size: 1.5rem;
             text-align: justify;
             align-self: center;
             width: 100%;
@@ -51,24 +49,23 @@
         &_elemento4{
             grid-area: ele4;
             width: 100%;
-            height: 300px;
+            height: 100%;
+            min-height: 300px;
         }
         &_elemento5{
             grid-area: ele5;
             padding: 10px;
-            font-size: 20px;
+            font-size: 1.5rem;
             text-align: justify;
             align-self: center;
         }
         &_elemento6{
             grid-area: ele6;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
+            @include flex(row, space-evenly, center, 0);
             padding: 10px;
             background-color: #e0adbe;
             margin-bottom: 0;
-            font-size: 20px;
+            font-size: 1.5rem;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
         }

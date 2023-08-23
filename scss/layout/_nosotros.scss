@@ -1,28 +1,28 @@
 .nosotros_principal{
     padding-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flex-center(column);
     &_container{
         h1{
             text-align: center;
             padding-bottom: 50px;
         }
         &_textos{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include flex(row, space-between, center, 20px);
             padding-bottom: 50px;
-            gap: 20px;
             &_mision, &_vision{
+                @include luz(centro);
+                height: 500px;
                 width: 50%;
                 padding: 15px;
                 background-color: $segundo-color;
-                border-radius: 20px;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border-top-right-radius: 10px;
+                border-bottom-left-radius: 10px;
                 transition: all 0.5s;
+                overflow-y: scroll;
                 p{
-                    font-size: 20px;
+                    font-size: 1.5rem;
                     text-align: justify;
                     color: $primer-color-fuente-hover;
                 }
@@ -33,6 +33,20 @@
                 &:hover{
                     background-color: $primer-color;
                 }
+                /* Agregamos estilos a las scrollbar generadas para que el tamaño de pantalla no afecte el contenido */
+                &::-webkit-scrollbar {
+                    width: 12px;             
+                }
+                &::-webkit-scrollbar-track {
+                    background: $segundo-color-logo;    
+                    border-bottom-right-radius: 20px;
+                    border-top-right-radius: 20px;   
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: $primer-color-logo;        
+                    border-bottom-right-radius: 20px;
+                    border-top-right-radius: 20px;
+                }
             }
         }
     } 
@@ -41,10 +55,7 @@
 /* Aplicación de estilos en el collage de momentos destacables */
 
 .nosotros_momentos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flex-center(column);
     padding-bottom: 50px;
     h2{
         padding-bottom: 50px;
@@ -66,31 +77,30 @@
         ;
         &_contenido{
             position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex-center(row);
             padding: 10px;
             &_texto{
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include flex-center(row);
                 position: absolute;
                 width: 100%;
                 height: 100%;
                 padding: 20px;
                 /* background-color: #19191925; */
                 p{
-                    font-size: 20px;
+                    font-size: 1.5rem;
                     font-weight: bold;
                     text-align: center;
                     color: white;
+                    background-color: #19191948;
+                    border-radius: 10px;
+                    padding: 10px;
                 }
             }
             img{
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                filter: blur(5px);
+                filter: blur(10px);
                 transition: all 0.5s;
                 border-radius: 20px;
                 &:hover{
