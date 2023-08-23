@@ -32,11 +32,22 @@
         &_elemento2{
             grid-area: ele2;
             width: 100%;
-            & .carousel .carousel-inner .carousel-item img{
-                min-height: 300px;
-                width: 100%;
-                object-fit: cover;
-            }
+            height: 100%;
+            background-color: aqua;
+            /* batallando un poco con loc carruseles */
+            .carousel{
+                height: 100%;
+                .carousel-inner{
+                    height: 100%;
+                    .carousel-item{
+                        height: 100%;
+                        img{
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    } 
+                } 
+            } 
         }
         &_elemento3{
             grid-area: ele3;
