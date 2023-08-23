@@ -33,7 +33,6 @@
             grid-area: ele2;
             width: 100%;
             height: 100%;
-            background-color: aqua;
             /* batallando un poco con loc carruseles */
             .carousel{
                 height: 100%;
@@ -50,12 +49,17 @@
             } 
         }
         &_elemento3{
+            display: inline-block;
             grid-area: ele3;
             padding: 10px;
-            font-size: 1.5rem;
-            text-align: justify;
-            align-self: center;
             width: 100%;
+            min-height: 400px;
+            @include flex-center(column);
+            p{
+                font-size: 1.5rem;
+                text-align: justify;
+                align-self: center;
+            }
         }
         &_elemento4{
             grid-area: ele4;

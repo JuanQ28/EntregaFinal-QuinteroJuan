@@ -495,7 +495,6 @@ footer .footer_redessociales_icons i:hover {
   grid-area: ele2;
   width: 100%;
   height: 100%;
-  background-color: aqua;
   /* batallando un poco con loc carruseles */
 }
 .sucursales_principal_sucursal_elemento2 .carousel {
@@ -512,12 +511,20 @@ footer .footer_redessociales_icons i:hover {
   object-fit: cover;
 }
 .sucursales_principal_sucursal_elemento3 {
+  display: inline-block;
   grid-area: ele3;
   padding: 10px;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.sucursales_principal_sucursal_elemento3 p {
   font-size: 1.5rem;
   text-align: justify;
   align-self: center;
-  width: 100%;
 }
 .sucursales_principal_sucursal_elemento4 {
   grid-area: ele4;
