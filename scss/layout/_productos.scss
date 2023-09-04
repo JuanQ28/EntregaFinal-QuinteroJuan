@@ -24,6 +24,11 @@ header{
     }
     .accordion-body{
         @include flex(column, normal, normal, 20px);
+        div{
+            p{
+                margin-bottom: 15px;
+            }
+        }
         p{
             font-size: 20px;
             font-weight: bold;
@@ -31,8 +36,13 @@ header{
         }
         .form-check{
             font-size: 18px;
+            @include flex-center(row);
+            gap: 5px;
+            input{
+                margin-top: 0;
+            }
         }
-        &_buscador{
+        input{
             padding: 10px;
             border-radius: 20px;
             font-size: 20px;

@@ -34,6 +34,27 @@ h3 {
     transform: scale(1);
   }
 }
+/* Animación para nuestro logo de Whatsapp */
+@keyframes move_wha {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(360deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(360deg) scale(1.1);
+  }
+  60% {
+    transform: rotate(0deg) scale(1);
+  }
+  80% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -203,37 +224,89 @@ footer .footer_redessociales_icons i:hover {
   color: #480f10;
 }
 
-/* Esta será la sección de bienvenida y ajustes del carrusel */
-#bienvenida {
-  padding-top: 50px;
+.wha_logo {
+  position: fixed;
+  top: 35%;
+  left: 0;
+  z-index: 10;
+}
+.wha_logo_contenedor {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: white;
+  transition: 0.3s all;
+}
+.wha_logo_contenedor i {
+  font-size: 1.5rem;
+  color: #2ea322;
+  transform: rotate(90deg);
+}
+.wha_logo_contenedor span {
+  writing-mode: vertical-lr;
+  font-size: 1.2rem;
+  color: #2ea322;
+  font-weight: bold;
+}
+.wha_logo_contenedor:hover {
+  background-color: #2ea322;
+  padding-left: 10px;
+}
+.wha_logo_contenedor:hover i {
+  color: white;
+}
+.wha_logo_contenedor:hover span {
+  color: white;
+}
+
+/* Esta será la sección de bienvenida y ajustes del carrusel */
+#bienvenida {
+  padding-top: 50px;
 }
 #bienvenida h1 {
   text-align: center;
   padding-bottom: 50px;
 }
-#bienvenida .carousel-caption h2 {
-  font-size: 20px;
-  color: #212529;
-  font-weight: bold;
-  background-color: white;
-  margin-bottom: 0;
+
+.carrusel {
+  padding-right: 0;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-#bienvenida .carousel-caption p {
-  color: #212529;
-  font-weight: bold;
-  background-color: white;
-}
-#bienvenida .contenedor_carrusel {
+.carrusel .contenedor_carrusel {
   width: 100%;
 }
-#bienvenida .contenedor_carrusel .carousel-item img {
+.carrusel .contenedor_carrusel .carousel-item {
+  /* @include flex-center(column); */
+  width: 100%;
+}
+.carrusel .contenedor_carrusel .carousel-item img {
   object-fit: cover;
   width: 100%;
-  height: 500px;
+  height: 550px;
+  filter: brightness(70%);
+}
+.carrusel .carousel-caption h2 {
+  background-color: rgba(255, 255, 255, 0.411);
+  font-weight: bold;
+  color: #191919;
+  margin-bottom: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.carrusel .carousel-caption p {
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.411);
+  font-weight: bold;
+  color: #191919;
+  margin-bottom: 0;
+  margin-bottom: 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 /* Ahora le daremos estilos y orden a la sección de publicaciones, en donde se muestran distintas cartas de productos */
@@ -583,6 +656,9 @@ header .accordion-body {
   justify-content: normal;
   gap: 20px;
 }
+header .accordion-body div p {
+  margin-bottom: 15px;
+}
 header .accordion-body p {
   font-size: 20px;
   font-weight: bold;
@@ -590,8 +666,16 @@ header .accordion-body p {
 }
 header .accordion-body .form-check {
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5px;
 }
-header .accordion-body_buscador {
+header .accordion-body .form-check input {
+  margin-top: 0;
+}
+header .accordion-body input {
   padding: 10px;
   border-radius: 20px;
   font-size: 20px;
@@ -882,6 +966,18 @@ header .header_acordeon_checkbox {
   .carrito_card_img {
     border-bottom-left-radius: 0;
   }
+  /* mediaqueries para la sección nosotros */
+  .nosotros_momentos_collage {
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas: "img1 img1" "img2 img3" "img4 img5" "img6 img7";
+  }
+  .nosotros_momentos_collage_contenido_texto {
+    padding: 10px;
+    max-height: 100%;
+  }
+  .nosotros_momentos_collage_contenido_texto p {
+    font-size: 1.2rem;
+  }
 }
 @media screen and (max-width: 590px) {
   /* aplicaciones de cambios al index, header y footer */
@@ -905,6 +1001,12 @@ header .header_acordeon_checkbox {
   }
   header .navegador_list li {
     font-size: 1.5rem;
+  }
+  .carrusel .contenedor_carrusel .carousel-item {
+    /* @include flex-center(column); */
+  }
+  .carrusel .contenedor_carrusel .carousel-item img {
+    height: 400px;
   }
   #publicaciones .publicaciones_container {
     width: 100%;
@@ -959,6 +1061,26 @@ header .header_acordeon_checkbox {
   /* mediaqueries para la página productos */
   .productos_separador {
     width: 100%;
+  }
+  /* mediaqueries para el carrusel del index */
+  .carrusel .contenedor_carrusel .carousel-item {
+    /* @include flex-center(column); */
+  }
+  .carrusel .contenedor_carrusel .carousel-item img {
+    height: 350px;
+  }
+  .carrusel .carousel-caption h2 {
+    font-size: 1.1rem;
+  }
+  .carrusel .carousel-caption p {
+    font-size: 1rem;
+  }
+  /* Acá acomodamos algunos tamaños que se ven muy rebundantes en las pantallas pequeñas */
+  h1 {
+    font-size: 2.3rem;
+  }
+  h2 {
+    font-size: 2.1rem;
   }
 }
 

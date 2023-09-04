@@ -1,34 +1,47 @@
 /* Esta será la sección de bienvenida y ajustes del carrusel */
 #bienvenida{
     padding-top: 50px;
-    @include flex-center(column);
     h1{
         text-align: center;
         padding-bottom: 50px;    
     }
-    .carousel-caption{
-        h2{
-        font-size: 20px;
-        color: #212529;
-        font-weight: bold;
-        background-color: white;
-        margin-bottom: 0;
-        }
-        p{   
-            color: #212529;
-            font-weight: bold;
-            background-color: white;        
-        }
-    }
+}
 
+.carrusel{
+    padding-right: 0;
+    padding-left: 0;
+    @include flex-center(column);
     .contenedor_carrusel{
         width: 100%;
         .carousel-item{
+            /* @include flex-center(column); */
+            width: 100%;
             img{
                 object-fit: cover;
                 width: 100%;
-                height: 500px;
+                height: 550px;
+                filter: brightness(70%);
             }
+        }
+    }
+    .carousel-caption{
+        h2{
+            background-color: rgba(255, 255, 255, 0.411);
+            font-weight: bold;
+            color: #191919;
+            margin-bottom: 0;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        p{ 
+            font-size: 1.5rem;  
+            background-color: rgba(255, 255, 255, 0.411);
+            font-weight: bold;
+            color: #191919;
+            margin-bottom: 0;
+            margin-bottom: 10px;       
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
         }
     }
 }

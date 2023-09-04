@@ -81,6 +81,25 @@
         }
         }
     }
+    /* mediaqueries para la sección nosotros */
+    .nosotros_momentos_collage{
+        grid-template-columns: repeat(2, 50%);
+        grid-template-areas: 
+        'img1 img1'
+        'img2 img3'
+        'img4 img5'
+        'img6 img7'
+        ;  
+        &_contenido{
+            &_texto{
+                padding: 10px;
+                max-height: 100%;
+                p{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 590px){
@@ -108,6 +127,17 @@
                 flex-direction: column;
                 li{
                     font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .carrusel{
+        .contenedor_carrusel{
+            .carousel-item{
+                /* @include flex-center(column); */
+                img{
+                    height: 400px;
                 }
             }
         }
@@ -200,5 +230,31 @@
         &_separador{
             width: 100%;
         }
+    }
+    /* mediaqueries para el carrusel del index */
+    .carrusel{
+        .contenedor_carrusel{
+            .carousel-item{
+                /* @include flex-center(column); */
+                img{
+                    height: 350px;
+                }
+            }
+        }
+        .carousel-caption{
+            h2{
+                font-size: 1.1rem;
+            }
+            p{ 
+                font-size: 1rem;
+            }
+        }
+    }
+    /* Acá acomodamos algunos tamaños que se ven muy rebundantes en las pantallas pequeñas */
+    h1{
+        font-size: 2.3rem;
+    }
+    h2{
+        font-size: 2.1rem;
     }
 }

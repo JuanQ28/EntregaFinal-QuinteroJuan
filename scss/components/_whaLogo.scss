@@ -1,0 +1,32 @@
+.wha_logo{
+    position: fixed;
+    top: 35%;
+    left: 0;
+    z-index: 10;
+    &_contenedor{
+        @include flex-center(column);
+        background-color: white;
+        transition: 0.3s all;
+        i{
+            font-size: 1.5rem;
+            color: #2ea322;
+            transform: rotate(90deg);
+        }
+        span{
+            writing-mode: vertical-lr;
+            font-size: 1.2rem;
+            color: #2ea322;
+            font-weight: bold;
+        }
+        &:hover{
+            background-color: #2ea322;
+            padding-left: 10px;
+            i{
+                color: white;
+            }
+            span{
+                color: white;
+            }
+        }
+    }
+}
